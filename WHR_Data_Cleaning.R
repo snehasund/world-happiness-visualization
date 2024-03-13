@@ -1,10 +1,13 @@
 install.packages("tidyverse")
 install.packages("ggplot2")
 install.packages("readr")
+install.packages("gridExtra")
 
 library(tidyverse)
 library(ggplot2)
 library(readr)
+library(dplyr)
+library(gridExtra)
 
 whr2015 <- read_csv("data/2015.csv")
 whr2016 <- read_csv("data/2016.csv")
@@ -103,6 +106,5 @@ whr2019$Region = regions2019
 # Combine all datasets into one full data report
 
 full_report <- list(whr2015, whr2016, whr2017, whr2018, whr2019)
-
 #################### DATA LOADING AND CLEANING COMPLETE #######################
 
