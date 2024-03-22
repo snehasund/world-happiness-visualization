@@ -28,3 +28,19 @@ ggplot(full_df, aes(x = Happiness.Score, color = Region)) +
   labs(title = "Density Curve of Happiness Scores by Region",
        x = "Happiness Score",
        y = "Density")
+
+# boxplot of happiness scores by region
+ggplot(full_df, aes(x = Region, y = Happiness.Score, fill = Region)) +
+  geom_boxplot() +
+  labs(title = "Boxplot of Happiness Scores by Region",
+       x = "Region",
+       y = "Happiness Score")
+
+# scatterplot of happiness score vs. economy (gdp per capita) with regression lines by region
+ggplot(full_df, aes(x = Economy..GDP.per.Capita., y = Happiness.Score, color = Region)) +
+  geom_point() +
+  geom_smooth(method = "lm", se = FALSE) +
+  labs(title = "Happiness Score vs. Economy (GDP per Capita) with Regression Lines by Region",
+       x = "Economy (GDP per Capita)",
+       y = "Happiness Score")
+
